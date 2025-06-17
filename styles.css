@@ -109,3 +109,34 @@ img {
   background-color: black;
   font-weight: bold;
 }
+
+#secretP {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  transform-origin: center center;
+  font-size: 32px;
+  margin: 0;
+  white-space: nowrap;  
+  animation:
+    secretAnimation    3s linear      infinite,
+    secretChangeColor  3s ease-in-out infinite alternate;
+}
+
+@keyframes secretAnimation {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes secretChangeColor {
+  0%   { color: aqua;   }
+  25%  { color: blue;   }
+  50%  { color: green;  }
+  75%  { color: yellow; }
+  100% { color: red;    }
+}
